@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: [
@@ -8,10 +9,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        mont: ["var(--font-mont)", ...fontFamily.sans],
+      },
+      colors: {
+        black: "#000000",
+        white: "#FFFFFF",
+        peach: "#FFE6BC",
+        isabelline: "#F7F1EA",
+        "light-yellow": "#FEFBDA",
+        dust: "#EDD1A1",
+      },
+      boxShadow: {
+        card: "inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5)",
+        "card-hov": "300px 200px 100px rgba(0, 0, 0, .4) inset",
       },
     },
   },
